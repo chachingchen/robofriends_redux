@@ -1,0 +1,23 @@
+state: a memory, web need memory to work
+
+state management: 
+redux makes state management simple by keep all state 
+in a object and pass down to components as props
+
+why redux: better state management once project grows
+
+flux pattern: 
+action -> dispatcher/function -> store/state -> view
+			  uni direction
+user trigger action(press button, dropdown)
+dispatcher receives action
+update state??
+user see the view they ask for
+
+redux === this.state
+
+make changes = Reducer(Action) {
+	return Store
+}
+
+
