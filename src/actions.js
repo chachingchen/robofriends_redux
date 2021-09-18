@@ -5,12 +5,13 @@ import {
 	REQUEST_ROBOTS_FAILED
 
 } from './constants.js'
-
+//payload: send the data/input to reducer
 export const setSearchField = (text) => ({
 	type: CHANGE_SEARCHFIELD,
 	payload: text
 })
 
+// thunkMiddleware listens to function action, gives it a dispatch to trigger other action 
 export const requestRobots = () => (dispatch) => {
 	dispatch({type: REQUEST_ROBOTS_PENDING});
 	fetch('https://jsonplaceholder.typicode.com/users')

@@ -5,11 +5,12 @@ import {
 	REQUEST_ROBOTS_FAILED
 
 } from './constants.js'
-
+// intial state in store or single source of truth
 const initialStateSearch = {
 	searchField: ''
 }
 
+// state is read only and always return same output
 export const searchRobots = (state= initialStateSearch, action={}) => {
 	switch(action.type) {
 		case CHANGE_SEARCHFIELD:
@@ -29,9 +30,9 @@ export const requestRobots = (state= initialStateRobots, action={}) => {
 	switch(action.type) {
 		case REQUEST_ROBOTS_PENDING:
 		  return Object.assign({}, state, {isPending: true});
-		  case REQUEST_ROBOTS_SUCCESS:
+		case REQUEST_ROBOTS_SUCCESS:
 		  return Object.assign({}, state, {robots: action.payload, isPending: false});
-		  case REQUEST_ROBOTS_FAILED:
+		case REQUEST_ROBOTS_FAILED:
 		  return Object.assign({}, state, {error: action.payload, isPending: false});
 		default:
 		  return state;

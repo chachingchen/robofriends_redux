@@ -7,6 +7,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import './App.css';
 
 import {setSearchField, requestRobots} from '../actions';
+//what state to listen
 const mapStateToProps = state => {
   return {
     searchField: state.searchRobots.searchField,
@@ -15,7 +16,8 @@ const mapStateToProps = state => {
     error: state.requestRobots.error
   }
 }
-
+//what action to listen
+//dispatch trigger action to be send to reducer 
 const mapDispatchToProps = dispatch => {
   return {
     onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
@@ -25,7 +27,6 @@ const mapDispatchToProps = dispatch => {
 
 class App extends Component {
   
-
   componentDidMount() {
     this.props.onRequestRobots()
   }
@@ -51,4 +52,6 @@ class App extends Component {
   }
 }
 
+//higher order function: a function that returns another functin
+//connect() listen to any state changes
 export default connect(mapStateToProps, mapDispatchToProps)(App); //higner order component
